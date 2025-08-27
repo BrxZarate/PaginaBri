@@ -1,219 +1,327 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mi Página Sencilla</title>
-  <meta name="description" content="Plantilla mínima en HTML y CSS: portada, servicios, sobre mí y contacto." />
-  <style>
-    /* ====== Estilos básicos, simples y responsivos ====== */
-    :root {
-      --bg: #ffffff;
-      --ink: #1f2937;   /* gris oscuro */
-      --muted: #6b7280; /* gris medio */
-      --brand: #2563eb; /* azul */
-      --brand-ink: #ffffff;
-      --card: #f9fafb;  /* gris muy claro */
-      --border: #e5e7eb;/* borde suave */
-      --radius: 14px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabores Caseros - Inicio</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+    color: #333;
+}
 
-    html { scroll-behavior: smooth; }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-    }
+/* Menú */
+nav {
+    background-color: #a0522d;
+}
 
-    .container { width: min(1100px, 92%); margin: 0 auto; }
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right; /* Menú alineado a la derecha */
+}
 
-    /* ====== Encabezado ====== */
-    header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: saturate(150%) blur(8px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
-    .logo { font-weight: 800; letter-spacing: 0.2px; }
-    nav a {
-      text-decoration: none;
-      color: var(--ink);
-      padding: 8px 10px;
-      border-radius: 10px;
-    }
-    nav a:hover { background: var(--card); }
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
 
-    /* ====== Hero ====== */
-    .hero {
-      padding: 64px 0 48px;
-      display: grid;
-      gap: 18px;
-      text-align: center;
-    }
-    .hero h1 { font-size: clamp(28px, 3.5vw, 44px); margin: 0; line-height: 1.15; }
-    .hero p { color: var(--muted); margin: 0 auto; max-width: 60ch; }
+nav ul li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    font-weight: bold;
+}
 
-    .button {
-      display: inline-block;
-      margin-top: 16px;
-      background: var(--brand);
-      color: var(--brand-ink);
-      padding: 12px 18px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .button:hover { filter: brightness(0.95); }
+nav ul li a:hover {
+    background-color: #8b4513;
+}
 
-    /* ====== Secciones ====== */
-    section { padding: 36px 0; }
-    .section-title { font-size: 26px; margin: 0 0 8px; }
-    .section-sub { color: var(--muted); margin: 0 0 18px; }
+/* Submenú */
+nav ul li ul {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #a0522d;
+    min-width: 160px;
+    z-index: 1;
+}
 
-    /* ====== Tarjetas (servicios) ====== */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0,1fr));
-      gap: 16px;
-    }
-    @media (max-width: 800px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-    }
-    .card h3 { margin: 0 0 6px; font-size: 18px; }
-    .card p { margin: 0; color: var(--muted); }
+nav ul li:hover ul {
+    display: block;
+}
 
-    /* ====== Sobre mí ====== */
-    .about {
-      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-    }
+nav ul li ul li {
+    display: block;
+}
 
-    /* ====== Formulario contacto ====== */
-    form { display: grid; gap: 12px; }
-    label { font-weight: 600; }
-    input, textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      font: inherit;
-    }
-    textarea { min-height: 110px; resize: vertical; }
-    .small { font-size: 14px; color: var(--muted); }
+nav ul li ul li a {
+    padding: 12px 16px;
+}
 
-    /* ====== Pie ====== */
-    footer {
-      margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted);
-      font-size: 14px; text-align: center;
-    }
-  </style>
+header {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Cuadros para recetas y secciones */
+.cuadro-receta, .cuadro-seccion {
+    background-color: #fff8e7;  
+    border: 1px solid #e2d1b3; 
+    border-radius: 15px;        
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1); 
+    transition: transform 0.2s; 
+}
+
+.cuadro-receta:hover, .cuadro-seccion:hover {
+    transform: translateY(-5px);
+}
+
+.cuadro-receta img, .cuadro-seccion img {
+    width: 220px;
+    height: 230px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.recetas {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.receta {
+    text-align: center;
+}
+
+footer {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+h2 {
+  text-align: center;
+  color: #5a3e2b;
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #3a2b1f;
+}
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #cbbba0;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fffaf3;
+}
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+button {
+  display: block;
+  width: 100%;
+  background: #8b5e3c;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #6e4629;
+}
+
+/* Botón Ir al inicio flotante */
+.btn-inicio {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #a0522d;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: opacity 0.3s, background 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    display: none; /* Oculto por defecto */
+}
+.btn-inicio:hover {
+    background-color: #8b4513;
+}
+</style>
+</head>
 <body>
-  <!-- ====== Encabezado con navegación ====== -->
-  <header>
-    <div class="container nav">
-      <div class="logo">MiSitio</div>
-      <nav aria-label="Navegación principal">
-        <a href="#inicio">Inicio</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
+
+<header>
+    <h1>🍳 Sabores Caseros</h1>
+    <p>Bienvenido a nuestro sitio de recetas</p>
+</header>
+
+<!-- Menú desplegable a la derecha -->
+<nav>
+    <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Recetas ▼</a>
+            <ul>
+                <li><a href="receta1.html">Espagueti Verde</a></li>
+                <li><a href="receta2.html">Ensalada Mediterránea</a></li>
+                <li><a href="receta3.html">Pasta con Tomate</a></li>
+                <li><a href="receta4.html">Bizcocho de Vainilla</a></li>
+            </ul>
+        </li>
+        <li><a href="consejos.html">Consejos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Bienvenido</h2>
+    <p>Descubre deliciosos platillos y recetas fáciles para preparar en casa.</p>
+    <div class="cuadro-seccion">
+        <img src="gastronomia.jpg" alt="Imagen de gastronomía" style="display:block; margin:0 auto; width:500px; border-radius:10px;">
     </div>
-  </header>
 
-  <!-- ====== Portada (Hero) ====== -->
-  <main id="inicio" class="container hero">
-    <h1>Una página sencilla para empezar rápido</h1>
-    <p>Este es un esqueleto listo para editar: incluye navegación, portada, tarjetas de servicios, una sección de “Sobre mí” y un formulario de contacto. 100% HTML + CSS, sin dependencias.</p>
-    <a class="button" href="#contacto">Escríbeme</a>
-  </main>
-
-  <!-- ====== Servicios ====== -->
-  <section id="servicios">
-    <div class="container">
-      <h2 class="section-title">Servicios</h2>
-      <p class="section-sub">Breve descripción de lo que ofreces.</p>
-      <div class="grid">
-        <article class="card">
-          <h3>Servicio 1</h3>
-          <p>Explica en una línea en qué consiste este servicio.</p>
-        </article>
-        <article class="card">
-          <h3>Servicio 2</h3>
-          <p>Ventajas principales o resultado esperado para el cliente.</p>
-        </article>
-        <article class="card">
-          <h3>Servicio 3</h3>
-          <p>Algún detalle extra como tiempos, alcance o modalidad.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ====== Sobre mí ====== -->
-  <section id="sobre-mi">
-    <div class="container about">
-      <h2 class="section-title">Sobre mí</h2>
-      <p>Soy [tu nombre], me apasiona [tu área]. Ayudo a personas y empresas a [tu propuesta de valor]. Aquí puedes añadir logros, herramientas que usas o una pequeña historia.</p>
-    </div>
-  </section>
-
-  <meta charset="UTF-8">
-  <title>Dos Imágenes</title>
-<body>
-  <h1>Ejemplo con imágenes locales</h1>
-
-  <!-- Primera imagen -->
-  <img src="imagen1.jpg" alt="Mi primera imagen" width="300">
-
-  <!-- Segunda imagen -->
-  <img src="imagen2.jpg" alt="Mi segunda imagen" width="300">
-
-  <!-- ====== Contacto ====== -->
-  <section id="contacto">
-    <div class="container">
-      <h2 class="section-title">Contacto</h2>
-      <p class="section-sub">Completa el formulario y te respondo a la brevedad.</p>
-      <form onsubmit="alert('¡Mensaje enviado (demo)!'); return false;">
-        <div>
-          <label for="nombre">Nombre</label>
-          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+    <section id="recetas">
+        <h2>Recetas Destacadas</h2>
+        <div class="recetas">
+            <div class="receta">
+                <div class="cuadro-receta">
+                    <h3>Ensalada Mediterránea</h3>
+                    <img src="ensalada.jpg" alt="Ensalada Mediterránea">
+                    <p>Fresca, colorida y llena de nutrientes. Perfecta para días calurosos.</p>
+                </div>
+            </div>
+            <div class="cuadro-receta">
+            <div class="receta">
+                    <h3>Pasta con Salsa de Tomate</h3>
+                    <img src="pasta.jpg" alt="Pasta con Salsa de Tomate">
+                    <p>La clásica receta italiana, fácil y deliciosa para toda la familia.</p>
+                </div>
+            </div>
+            <div class="receta">
+                <div class="cuadro-receta">
+                    <h3>Bizcocho de Vainilla</h3>
+                    <img src="bizcocho.jpg" alt="Bizcocho de Vainilla">
+                    <p>Esponjoso y aromático, ideal para acompañar con café o té.</p>
+                </div>
+            </div>
         </div>
-        <div>
-          <label for="email">Correo</label>
-          <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+    </section>
+
+    <section id="consejos">
+        <h2>Consejos de Cocina</h2>
+        <div class="cuadro-seccion">
+            <p>🔹 Usa ingredientes frescos siempre que sea posible.</p>
+            <p>🔹 Mantén tus cuchillos bien afilados para cocinar más rápido y seguro.</p>
+            <p>🔹 Prueba nuevos condimentos y especias para darle un toque único a tus platos.</p>
         </div>
-        <div>
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" name="mensaje" placeholder="¿Cómo puedo ayudarte?" required></textarea>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="cuadro-seccion">
+            <p>¿Tienes una receta para compartir o una pregunta? </p>
+            <form action="https://staging.formspree.io/f/egqlvodq" method="POST">
+    <h2>Formulario de Contacto</h2>
+
+    <label>
+      Nombre:
+      <input type="text" name="nombre" required>
+    </label>
+
+    <label>
+      Apellidos:
+      <input type="text" name="apellidos" required>
+    </label>
+
+    <label>
+      Correo:
+      <input type="email" name="email" required>
+    </label>
+
+    <label>
+      Número de teléfono:
+      <input type="tel" name="numero" required>
+    </label>
+
+    <label>
+      Puesto:
+      <input type="text" name="puesto" required>
+    </label>
+
+    <label>
+      País:
+      <select name="pais" required>
+        <option value="">-- Selecciona tu país --</option>
+        <option value="México">México</option>
+        <option value="Argentina">Argentina</option>
+        <option value="Colombia">Colombia</option>
+        <option value="España">España</option>
+        <option value="Chile">Chile</option>
+        <option value="Otro">Otro</option>
+      </select>
+    </label>
+
+    <label>
+      Comentario:
+      <textarea name="comentario" required></textarea>
+    </label>
+    
+    <!-- Campo oculto para asunto -->
+    <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario">
+
+    <button type="submit">Enviar</button>
         </div>
-        <button class="button" type="submit">Enviar</button>
-        <p class="small">* Este formulario es de demostración; ajusta la acción para enviarlo a tu correo/servidor.</p>
-      </form>
-    </div>
-  </section>
+    </section>
+</main>
 
-  <footer>
-    <div class="container">© <span id="y"></span> MiSitio — Todos los derechos reservados.</div>
-  </footer>
+<footer>
+    <p>© 2025 Sabores Caseros - Todos los derechos reservados</p>
+</footer>
 
-  <script>
-    // Año dinámico en el pie
-    document.getElementById('y').textContent = new Date().getFullYear();
+<!-- Botón flotante -->
+<button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-inicio" id="btnInicio">⬆</button>
 
-	</head>
-  </script>
+<script>
+// Mostrar/ocultar botón cuando se hace scroll
+window.onscroll = function() {
+  let btn = document.getElementById("btnInicio");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    btn.style.display = "block";
+  } else {
+    btn.style.display = "none";
+  }
+};
+</script>
+
 </body>
 </html>
