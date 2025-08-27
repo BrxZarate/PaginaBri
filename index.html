@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi Página Sencilla</title>
+  <meta name="description" content="Plantilla mínima en HTML y CSS: portada, servicios, sobre mí y contacto." />
+  <style>
+    /* ====== Estilos básicos, simples y responsivos ====== */
+    :root {
+      --bg: #ffffff;
+      --ink: #1f2937;   /* gris oscuro */
+      --muted: #6b7280; /* gris medio */
+      --brand: #2563eb; /* azul */
+      --brand-ink: #ffffff;
+      --card: #f9fafb;  /* gris muy claro */
+      --border: #e5e7eb;/* borde suave */
+      --radius: 14px;
+    }
+
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+
+    /* ====== Encabezado ====== */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: saturate(150%) blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; }
+    .logo { font-weight: 800; letter-spacing: 0.2px; }
+    nav a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    nav a:hover { background: var(--card); }
+
+    /* ====== Hero ====== */
+    .hero {
+      padding: 64px 0 48px;
+      display: grid;
+      gap: 18px;
+      text-align: center;
+    }
+    .hero h1 { font-size: clamp(28px, 3.5vw, 44px); margin: 0; line-height: 1.15; }
+    .hero p { color: var(--muted); margin: 0 auto; max-width: 60ch; }
+
+    .button {
+      display: inline-block;
+      margin-top: 16px;
+      background: var(--brand);
+      color: var(--brand-ink);
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .button:hover { filter: brightness(0.95); }
+
+    /* ====== Secciones ====== */
+    section { padding: 36px 0; }
+    .section-title { font-size: 26px; margin: 0 0 8px; }
+    .section-sub { color: var(--muted); margin: 0 0 18px; }
+
+    /* ====== Tarjetas (servicios) ====== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 16px;
+    }
+    @media (max-width: 800px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+    .card h3 { margin: 0 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    /* ====== Sobre mí ====== */
+    .about {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+
+    /* ====== Formulario contacto ====== */
+    form { display: grid; gap: 12px; }
+    label { font-weight: 600; }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font: inherit;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .small { font-size: 14px; color: var(--muted); }
+
+    /* ====== Pie ====== */
+    footer {
+      margin-top: 40px; padding: 22px 0; border-top: 1px solid var(--border); color: var(--muted);
+      font-size: 14px; text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- ====== Encabezado con navegación ====== -->
+  <header>
+    <div class="container nav">
+      <div class="logo">MiSitio</div>
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ====== Portada (Hero) ====== -->
+  <main id="inicio" class="container hero">
+    <h1>Una página sencilla para empezar rápido</h1>
+    <p>Este es un esqueleto listo para editar: incluye navegación, portada, tarjetas de servicios, una sección de “Sobre mí” y un formulario de contacto. 100% HTML + CSS, sin dependencias.</p>
+    <a class="button" href="#contacto">Escríbeme</a>
+  </main>
+
+  <!-- ====== Servicios ====== -->
+  <section id="servicios">
+    <div class="container">
+      <h2 class="section-title">Servicios</h2>
+      <p class="section-sub">Breve descripción de lo que ofreces.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>Servicio 1</h3>
+          <p>Explica en una línea en qué consiste este servicio.</p>
+        </article>
+        <article class="card">
+          <h3>Servicio 2</h3>
+          <p>Ventajas principales o resultado esperado para el cliente.</p>
+        </article>
+        <article class="card">
+          <h3>Servicio 3</h3>
+          <p>Algún detalle extra como tiempos, alcance o modalidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== Sobre mí ====== -->
+  <section id="sobre-mi">
+    <div class="container about">
+      <h2 class="section-title">Sobre mí</h2>
+      <p>Soy [tu nombre], me apasiona [tu área]. Ayudo a personas y empresas a [tu propuesta de valor]. Aquí puedes añadir logros, herramientas que usas o una pequeña historia.</p>
+    </div>
+  </section>
+
+  <!-- ====== Contacto ====== -->
+  <section id="contacto">
+    <div class="container">
+      <h2 class="section-title">Contacto</h2>
+      <p class="section-sub">Completa el formulario y te respondo a la brevedad.</p>
+      <form onsubmit="alert('¡Mensaje enviado (demo)!'); return false;">
+        <div>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+        </div>
+        <div>
+          <label for="email">Correo</label>
+          <input id="email" name="email" type="email" placeholder="tu@correo.com" required />
+        </div>
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="¿Cómo puedo ayudarte?" required></textarea>
+        </div>
+        <button class="button" type="submit">Enviar</button>
+        <p class="small">* Este formulario es de demostración; ajusta la acción para enviarlo a tu correo/servidor.</p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="y"></span> MiSitio — Todos los derechos reservados.</div>
+  </footer>
+
+  <script>
+    // Año dinámico en el pie
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
