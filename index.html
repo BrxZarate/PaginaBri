@@ -22,7 +22,7 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: right; /* Menú alineado a la derecha */
+    text-align: right;
 }
 
 nav ul li {
@@ -77,7 +77,7 @@ main {
     margin: auto;
 }
 
-/* Cuadros para recetas y secciones */
+/* Cuadros */
 .cuadro-receta, .cuadro-seccion {
     background-color: #fff8e7;  
     border: 1px solid #e2d1b3; 
@@ -158,21 +158,21 @@ button:hover {
   background: #6e4629;
 }
 
-/* Botón Ir al inicio flotante */
+/* Botón Ir al inicio flotante - pequeño abajo */
 .btn-inicio {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 10px;   /* parte inferior */
+    right: 10px;    /* esquina derecha */
     background-color: #a0522d;
     color: white;
     border: none;
-    padding: 12px 16px;
+    padding: 4px 6px;  /* más pequeño aún */
     border-radius: 50%;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 10px;   /* icono pequeño */
     transition: opacity 0.3s, background 0.3s;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    display: none; /* Oculto por defecto */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    display: none; /* oculto hasta scroll */
 }
 .btn-inicio:hover {
     background-color: #8b4513;
@@ -186,7 +186,7 @@ button:hover {
     <p>Bienvenido a nuestro sitio de recetas</p>
 </header>
 
-<!-- Menú desplegable a la derecha -->
+<!-- Menú -->
 <nav>
     <ul>
         <li><a href="index.html">Inicio</a></li>
@@ -200,6 +200,8 @@ button:hover {
         </li>
         <li><a href="consejos.html">Consejos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <!-- Botón de descarga PDF en el menú -->
+        <li><a href="menu.pdf" download="Recetario_Sabores_Caseros">📄 Descargar PDF</a></li>
     </ul>
 </nav>
 
@@ -251,55 +253,48 @@ button:hover {
         <div class="cuadro-seccion">
             <p>¿Tienes una receta para compartir o una pregunta? </p>
             <form action="https://staging.formspree.io/f/egqlvodq" method="POST">
-    <h2>Formulario de Contacto</h2>
+                <h2>Formulario de Contacto</h2>
 
-    <label>
-      Nombre:
-      <input type="text" name="nombre" required>
-    </label>
+                <label>Nombre:
+                  <input type="text" name="nombre" required>
+                </label>
 
-    <label>
-      Apellidos:
-      <input type="text" name="apellidos" required>
-    </label>
+                <label>Apellidos:
+                  <input type="text" name="apellidos" required>
+                </label>
 
-    <label>
-      Correo:
-      <input type="email" name="email" required>
-    </label>
+                <label>Correo:
+                  <input type="email" name="email" required>
+                </label>
 
-    <label>
-      Número de teléfono:
-      <input type="tel" name="numero" required>
-    </label>
+                <label>Número de teléfono:
+                  <input type="tel" name="numero" required>
+                </label>
 
-    <label>
-      Puesto:
-      <input type="text" name="puesto" required>
-    </label>
+                <label>Puesto:
+                  <input type="text" name="puesto" required>
+                </label>
 
-    <label>
-      País:
-      <select name="pais" required>
-        <option value="">-- Selecciona tu país --</option>
-        <option value="México">México</option>
-        <option value="Argentina">Argentina</option>
-        <option value="Colombia">Colombia</option>
-        <option value="España">España</option>
-        <option value="Chile">Chile</option>
-        <option value="Otro">Otro</option>
-      </select>
-    </label>
+                <label>País:
+                  <select name="pais" required>
+                    <option value="">-- Selecciona tu país --</option>
+                    <option value="México">México</option>
+                    <option value="Argentina">Argentina</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="España">España</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </label>
 
-    <label>
-      Comentario:
-      <textarea name="comentario" required></textarea>
-    </label>
-    
-    <!-- Campo oculto para asunto -->
-    <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario">
+                <label>Comentario:
+                  <textarea name="comentario" required></textarea>
+                </label>
+                
+                <input type="hidden" name="_subject" value="Nuevo mensaje desde el formulario">
 
-    <button type="submit">Enviar</button>
+                <button type="submit">Enviar</button>
+            </form>
         </div>
     </section>
 </main>
@@ -308,7 +303,7 @@ button:hover {
     <p>© 2025 Sabores Caseros - Todos los derechos reservados</p>
 </footer>
 
-<!-- Botón flotante -->
+<!-- Botón flotante Ir arriba -->
 <button onclick="window.scrollTo({top: 0, behavior: 'smooth'});" class="btn-inicio" id="btnInicio">⬆</button>
 
 <script>
